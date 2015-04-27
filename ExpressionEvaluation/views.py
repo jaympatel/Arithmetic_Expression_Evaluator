@@ -16,12 +16,13 @@ def get_expression(request):
         if form.is_valid():
             expression=form.cleaned_data['expression']
             print form.cleaned_data['expression']
-            # e = Expression()
-            # e.expression_string=form.cleaned_data['expression']
-            # e.expression_result='patel'
-            # e.save()
+            e2 = Expression()
+            e2.expression_string=form.cleaned_data['expression']
+            
             e = Evaluator()
             result=e.evaluate_string(expression)
+            e2.expression_result=result
+            e2.save()
             print result
             return render(request,'result.html',{'result':result})
                 
@@ -38,10 +39,10 @@ def index(request):
 
 def db(request):
 
-    greeting = Greeting()
-    greeting.save()
+#    greeting = Greeting()
+#    greeting.save()
 
-    greetings = Greeting.objects.all()
+    expressions = Expression.objects.all()
 
-    return render(request, 'db.html', {'greetings': greetings})
+    return render(request, 'db.html', {'expresions': expressions})
 
