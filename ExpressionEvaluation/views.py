@@ -28,19 +28,10 @@ def get_expression(request):
                 
     else:
         form = ExpressionForm()
-        return render(request, 'index.html', {'form': form})
+    return render(request, 'index.html', {'form': form})
 
-
-
-'''
-def index(request):
-    return HttpResponse('Hello from Python!')
-'''
 
 def db(request):
-
-#    greeting = Greeting()
-#    greeting.save()
 
     expressions = Expression.objects.all()
 
