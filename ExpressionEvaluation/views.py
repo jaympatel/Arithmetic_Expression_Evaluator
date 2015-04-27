@@ -24,7 +24,7 @@ def get_expression(request):
                 print result
                 return render(request,'result.html',{'result':result})
             except:
-                result='Oops! Something went wrong. Please try again.'
+                result='Wrong input! Try again.'
                 return render(request,'result.html',{'result':result})
                 
     else:
