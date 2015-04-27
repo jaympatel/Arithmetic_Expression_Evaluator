@@ -3,7 +3,7 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 admin.autodiscover()
 
-import hello.views
+import ExpressionEvaluation.views
 
 urlpatterns = patterns('',
     # Examples:
