@@ -17,7 +17,7 @@ def get_expression(request):
             expression=form.cleaned_data['expression']
             print form.cleaned_data['expression']
             e2 = Expression()
-            e2.expression_string=form.cleaned_data['expression']
+            e2.expression_string=str(form.cleaned_data['expression'])
             
             e = Evaluator()
             result=e.evaluate_string(expression)
