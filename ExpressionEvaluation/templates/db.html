@@ -4,7 +4,7 @@
 <ul>
 
 {% for expression in expressions %}
-    <li>{{ expression.expression_string,expression.expression_result,expression.expression_time}}</li>
+    <li>{{ expression.expression_string+'  '+expression.expression_result+'  '+expression.expression_time}}</li>
 {% endfor %}
 
 </ul>
