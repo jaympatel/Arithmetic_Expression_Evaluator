@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect
 from .models import Expression
 from Evaluator import Evaluator
 
+from .models import Greeting
 
 # Create your views here.
 
@@ -33,7 +34,7 @@ def get_expression(request):
 '''
 def index(request):
     return HttpResponse('Hello from Python!')
-
+'''
 
 def db(request):
 
@@ -44,4 +45,3 @@ def db(request):
 
     return render(request, 'db.html', {'greetings': greetings})
 
-'''
