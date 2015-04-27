@@ -11,17 +11,21 @@ def get_expression(request):
     if request.method == 'POST':
         form = ExpressionForm(request.POST)
         if form.is_valid():
-            expression=form.cleaned_data['expression']
-            print form.cleaned_data['expression']
-            e2 = Expression()
-            e2.expression_string=str(form.cleaned_data['expression'])
+            try:
+                expression=form.cleaned_data['expression']
+                print form.cleaned_data['expression']
+                e2 = Expression()
+                e2.expression_string=str(form.cleaned_data['expression'])
             
-            e = Evaluator()
-            result=e.evaluate_string(expression)
-            e2.expression_result=result
-            e2.save()
-            print result
-            return render(request,'result.html',{'result':result})
+                e = Evaluator()
+                result=e.evaluate_string(expression)
+                e2.expression_result=result
+                e2.save()
+                print result
+                return render(request,'result.html',{'result':result})
+            except:
+                result='Oops! Something went wrong. Please try again.'
+                return render(request,'result.html',{'result':result})
                 
     else:
         form = ExpressionForm()
