@@ -5,9 +5,6 @@ from django.http import HttpResponseRedirect
 from .models import Expression
 from Evaluator import Evaluator
 
-from .models import Greeting
-
-# Create your views here.
 
 
 def get_expression(request):
