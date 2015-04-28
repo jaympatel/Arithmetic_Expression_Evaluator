@@ -7,6 +7,7 @@
 <body>
 <center>
 <form action="get_expression/" method="post">
+    <h2>Enter Arithmetic Expression : </h2>
     {% csrf_token %}
     {{ form }}
     <input type="submit" value="Submit" />
