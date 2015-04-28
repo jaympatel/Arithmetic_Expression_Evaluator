@@ -5,12 +5,12 @@
     <title>Arithmetic Expression Evaluation</title>
 </head>
 <body>
-<center><h2>
+<center>
 <form action="get_expression/" method="post">
     {% csrf_token %}
     {{ form }}
     <input type="submit" value="Submit" />
-</form></h2>
+</form>
 This application supports + , - , * , /  operations. It also accepts ( and ) in proper nested format.
 
     </center>
