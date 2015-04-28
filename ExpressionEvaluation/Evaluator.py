@@ -32,6 +32,8 @@ class Evaluator:
                 while len(operator_list)>0 and self.check_precedence(character_list[i],operator_list[-1]):
                     operand_list.append(self.perform_operation(operator_list.pop(),operand_list.pop(),operand_list.pop()))
                 operator_list.append(character_list[i])
+            else:
+                raise ValueError
             i+=1
 
         while len(operator_list)>0 :
